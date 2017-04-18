@@ -1,4 +1,4 @@
-public static BufferedImage translateBufferedImageX(BufferedImage bi, int traslation, int BufferedImageType, boolean white)
+public static BufferedImage traslateBufferedImageX(BufferedImage bi, int traslation, int BufferedImageType, boolean white)
     {
         BufferedImage bo = new BufferedImage(bi.getWidth(), bi.getHeight(), BufferedImageType);
         Graphics2D g2D;
@@ -27,4 +27,14 @@ public static BufferedImage translateBufferedImageX(BufferedImage bi, int trasla
         }
         
         return bo;
+    }
+    public static BufferedImage initializeBufferedImage(BufferedImage bi, Color c)
+    {
+        //System.out.printf("R = "+c.getRed()+ " G = "+c.getGreen()+" B = "+c.getBlue());
+        for (int i = 0; i < bi.getWidth(); i++) {
+            for (int j = 0; j < bi.getHeight(); j++) {
+                bi.setRGB(i, j, c.getRGB());
+            }
+        }
+        return bi;
     }
